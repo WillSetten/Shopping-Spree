@@ -1476,6 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDestination: {fileID: 832109349}
+  previousParent: {fileID: 0}
 --- !u!114 &1208350124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,6 +1524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDestination: {fileID: 832109349}
+  previousParent: {fileID: 0}
 --- !u!23 &1210501832
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1780,7 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1309179950}
-  speed: 10
+  speed: 5
 --- !u!1 &1369731206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,6 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDestination: {fileID: 832109349}
+  previousParent: {fileID: 0}
 --- !u!114 &1369731213
 MonoBehaviour:
   m_ObjectHideFlags: 0
