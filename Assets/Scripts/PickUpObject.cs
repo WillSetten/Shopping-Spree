@@ -40,5 +40,6 @@ public class PickUpObject : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<BoxCollider>().enabled = true;
         holdingObject = false;
+
     }
 }

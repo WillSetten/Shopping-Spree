@@ -11,7 +11,6 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         // Lockdown mouse pointer to centre of the screen, but GUI interaction needs to be updated
         Cursor.lockState = CursorLockMode.Locked;
         // Cursor.lockState = CursorLockMode.Confined;
@@ -21,8 +20,6 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
