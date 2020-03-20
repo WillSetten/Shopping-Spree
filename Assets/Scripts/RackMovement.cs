@@ -9,9 +9,11 @@ public class RackMovement : MonoBehaviour
     public bool rotating;
     //True if the rack is being shifted forward or back
     public bool shifting;
+    private MouseLook mouse;
     void Start()
     {
         rail = transform.parent;
+        mouse = FindObjectOfType<MouseLook>();
     }
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class RackMovement : MonoBehaviour
     {
         if (rotating)
         {
-            rail.Rotate(new Vector3(0, Input.GetAxis("Mouse X")*Time.deltaTime*100, 0), Space.Self);
+            rail.Rotate(new Vector3(0, Input.GetAxis("Mouse X")*Time.deltaTime* mouse.mouseSensitivity, 0), Space.Self);
         }
         else if (shifting)
         {
