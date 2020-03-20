@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClothesDisplay : MonoBehaviour
 {
   public GameObject[] clothesArray;
+  public Transform clothesStorage;
   public Vector3 start = new Vector3(0, 5, 0), end = new Vector3(2, 5, 0);
 
     // Start is called before the first frame update
@@ -13,10 +14,11 @@ public class ClothesDisplay : MonoBehaviour
         clothesArray = Resources.LoadAll<GameObject>("Clothing_Pack/Prefabs");
 
         int i = 0;
-        foreach(GameObject o in clothesArray) {
-          Debug.Log(o);
-          Instantiate(o, new Vector3( i, 0, 0), Quaternion.identity);
-          i += 3;
+        while(i<17){
+          GameObject temp = Instantiate(clothesArray[i], new Vector3( 0, 0, 0), clothesArray[i].transform.rotation);
+          temp.transform.parent = clothesStorage;
+          temp.transform.localPosition = new Vector3(0,0,(float)i/2);
+          i += 1;
         }
     }
 
