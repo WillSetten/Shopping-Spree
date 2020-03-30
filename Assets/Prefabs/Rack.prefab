@@ -205,6 +205,7 @@ MonoBehaviour:
   clothesArray: []
   clothesStorage: {fileID: 189533288352969840}
   clothesSpacing: 0
+  clothesPositions: []
 --- !u!1 &909466095967677755
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6795826303141222574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.513006, z: -2.25}
+  m_LocalPosition: {x: 0, y: 9.513006, z: -3}
   m_LocalScale: {x: 0.5, y: 5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 8901638670730206309}
