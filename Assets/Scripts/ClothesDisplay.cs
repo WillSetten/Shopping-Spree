@@ -90,10 +90,7 @@ public class ClothesDisplay : MonoBehaviour
                     //Debug.Log("Teleporting " + t.gameObject.name + " to the right side of the rack");
                     t.localPosition = new Vector3(0, t.localPosition.y, t.localPosition.z-clothesLimit);
                 }
-                else
-                {
-                    t.localPosition = new Vector3(t.localPosition.x, t.localPosition.y, t.localPosition.z - Input.GetAxis("Mouse X") * mouse.mouseSensitivity / 5 * Time.deltaTime);
-                }
+                t.localPosition = new Vector3(t.localPosition.x, t.localPosition.y, t.localPosition.z - Input.GetAxis("Mouse X") * mouse.mouseSensitivity / 5 * Time.deltaTime);
             }
         }
     }
