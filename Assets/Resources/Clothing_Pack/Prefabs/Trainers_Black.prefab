@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420068}
   - component: {fileID: 9520072}
+  - component: {fileID: -269740708877584660}
   m_Layer: 0
   m_Name: Trainers_Black
   m_TagString: Untagged
@@ -52,6 +53,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-269740708877584660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad45af298d1a84e4b98776a5dae5cd23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshes:
+  - {fileID: 2320070}
+  - {fileID: 2320072}
 --- !u!1 &120070
 GameObject:
   m_ObjectHideFlags: 0

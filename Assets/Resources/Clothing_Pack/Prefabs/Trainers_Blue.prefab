@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464996}
   - component: {fileID: 9565000}
+  - component: {fileID: -8591948935746050461}
   m_Layer: 0
   m_Name: Trainers_Blue
   m_TagString: Untagged
@@ -52,6 +53,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-8591948935746050461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad45af298d1a84e4b98776a5dae5cd23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshes:
+  - {fileID: 2365000}
+  - {fileID: 2364998}
 --- !u!1 &164998
 GameObject:
   m_ObjectHideFlags: 0

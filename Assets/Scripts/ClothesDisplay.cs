@@ -19,17 +19,17 @@ public class ClothesDisplay : MonoBehaviour
         scrolling = false;
 
         clothesArray = Resources.LoadAll<GameObject>("Clothing_Pack/Prefabs");
-        clothesSpacing = 1.1f;
+        clothesSpacing = 0.8f;
 
         int i = 0;
         while(i < clothesArray.Length){
           GameObject temp = Instantiate(clothesArray[i], new Vector3( 0, clothesArray[i].transform.position.y, 0), clothesStorage.rotation * clothesArray[i].transform.rotation);
           temp.transform.parent = clothesStorage;
-          temp.transform.localPosition = new Vector3(0, clothesArray[i].transform.position.y, (float)i/clothesSpacing);
+          temp.transform.localPosition = new Vector3(0, clothesArray[i].transform.position.y, (float)i*clothesSpacing);
           clothesPositions.Add(temp.transform);
           i += 1;
         }
-        clothesLimit = (float)i/clothesSpacing;
+        clothesLimit = (float)i*clothesSpacing;
     }
 
     private void OnMouseDown() {
@@ -43,27 +43,56 @@ public class ClothesDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (scrolling)
+        foreach (Transform t in clothesPositions)
         {
-            foreach (Transform t in clothesPositions)
+            //OPACITY
+            //Set the opacity of this object to the appropriate value based on how far it is along the rack
+            //0 if it is greater than 5.5 or lower than 0.5
+            OpacityChanger objectOpacity = t.GetComponent<OpacityChanger>();
+            if (t.localPosition.z > 11f || t.localPosition.z < 1f)
+            {
+                //Set opacity to 0
+                objectOpacity.changeOpacity(0);
+            }
+            //If the object is in the middle units of the rack
+            else if (t.localPosition.z > 2f && t.localPosition.z < 10f)
+            {
+                //Set opacity to 1
+                objectOpacity.changeOpacity(1);
+            }
+            //Else fade object out depending on it's z
+            else
+            {
+                if (t.localPosition.z > 1f && t.localPosition.z < 2f)
+                {
+                    objectOpacity.changeOpacity(t.localPosition.z-1);
+                }
+                else if (t.localPosition.z > 10f && t.localPosition.z < 11f)
+                {
+                    objectOpacity.changeOpacity(t.localPosition.z);
+                }
+            }
+
+            //POSITIONING
+            if (scrolling)
             {
                 //If position of this piece of clothing is too far to the right, teleport item to the left side of the rack
                 if (t.localPosition.z < 0)
                 {
-                    Debug.Log(t.localPosition.z);
-                    Debug.Log("Teleporting " + t.gameObject.name + " to the left side of the rack");
-                    t.localPosition = new Vector3(0, t.localPosition.y, clothesLimit + 0.4f);
+                    //Debug.Log(t.localPosition.z);
+                    //Debug.Log("Teleporting " + t.gameObject.name + " to the left side of the rack");
+                    t.localPosition = new Vector3(0, t.localPosition.y, clothesLimit+t.localPosition.z);
                 }
                 //If the position of this piece of clothing is too far to the left, teleport item to the right side of the rack
-                else if (t.localPosition.z > clothesLimit + 0.5f)
+                else if (t.localPosition.z > clothesLimit)
                 {
-                    Debug.Log(t.localPosition.z);
-                    Debug.Log("Teleporting " + t.gameObject.name + " to the right side of the rack");
-                    t.localPosition = new Vector3(0, t.localPosition.y, 0);
+                    //Debug.Log(t.localPosition.z);
+                    //Debug.Log("Teleporting " + t.gameObject.name + " to the right side of the rack");
+                    t.localPosition = new Vector3(0, t.localPosition.y, t.localPosition.z-clothesLimit);
                 }
                 else
                 {
-                    t.localPosition = new Vector3(t.localPosition.x, t.localPosition.y, t.localPosition.z - Input.GetAxis("Mouse X") * mouse.mouseSensitivity / 10 * Time.deltaTime);
+                    t.localPosition = new Vector3(t.localPosition.x, t.localPosition.y, t.localPosition.z - Input.GetAxis("Mouse X") * mouse.mouseSensitivity / 5 * Time.deltaTime);
                 }
             }
         }
