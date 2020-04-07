@@ -19,6 +19,10 @@ public class PickUpObject : MonoBehaviour
         {
             this.transform.position = myDestination.position;
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            GetComponentInChildren<Canvas>().gameObject.SetActive(true);
+        }
     }
 
     void OnMouseDown()

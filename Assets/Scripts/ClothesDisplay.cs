@@ -30,6 +30,10 @@ public class ClothesDisplay : MonoBehaviour
           i += 1;
         }
         clothesLimit = (float)i*clothesSpacing;
+        foreach (Transform t in clothesPositions)
+        {
+            t.GetComponentInChildren<Canvas>().gameObject.SetActive(false);
+        }
     }
 
     private void OnMouseDown() {
