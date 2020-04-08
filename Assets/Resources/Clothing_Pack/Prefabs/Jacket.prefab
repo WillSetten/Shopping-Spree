@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 478204}
   - component: {fileID: 9578202}
   - component: {fileID: 6511804594084172782}
+  - component: {fileID: -476741955221558390}
+  - component: {fileID: 73832050667517170}
   m_Layer: 0
   m_Name: Jacket
   m_TagString: Untagged
@@ -104,8 +106,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178204}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -0.2}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.571, z: -0.2}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children:
   - {fileID: 478202}
@@ -114,7 +116,7 @@ Transform:
   - {fileID: 2280678326404676245}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &9578202
 Animator:
   serializedVersion: 3
@@ -150,6 +152,34 @@ MonoBehaviour:
   - {fileID: 2378202}
   - {fileID: 2378204}
   - {fileID: 2378206}
+--- !u!114 &-476741955221558390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf3907a4a6393b4c95364d6a8671f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDestination: {fileID: 0}
+  previousParent: {fileID: 0}
+  holdingObject: 0
+--- !u!65 &73832050667517170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 73.04724, y: 90.07582, z: 23.237926}
+  m_Center: {x: -0.054567218, y: -45.03791, z: 7.3364086}
 --- !u!1 &178206
 GameObject:
   m_ObjectHideFlags: 0

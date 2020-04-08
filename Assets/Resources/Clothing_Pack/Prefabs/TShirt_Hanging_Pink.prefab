@@ -248,6 +248,8 @@ GameObject:
   - component: {fileID: 468994}
   - component: {fileID: 9568988}
   - component: {fileID: 7968584566842100203}
+  - component: {fileID: -5631871135780336978}
+  - component: {fileID: -6894926906283367438}
   m_Layer: 0
   m_Name: TShirt_Hanging_Pink
   m_TagString: Untagged
@@ -262,7 +264,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168994}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children:
@@ -272,7 +274,7 @@ Transform:
   - {fileID: 9151251704781903838}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &9568988
 Animator:
   serializedVersion: 3
@@ -308,6 +310,34 @@ MonoBehaviour:
   - {fileID: 2368988}
   - {fileID: 2368990}
   - {fileID: 2368992}
+--- !u!114 &-5631871135780336978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf3907a4a6393b4c95364d6a8671f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDestination: {fileID: 0}
+  previousParent: {fileID: 0}
+  holdingObject: 0
+--- !u!65 &-6894926906283367438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 45.0655, y: 83.219666, z: 6.4289856}
+  m_Center: {x: -117.50017, y: 244.83849, z: -703.9657}
 --- !u!1001 &807170835588879963
 PrefabInstance:
   m_ObjectHideFlags: 0

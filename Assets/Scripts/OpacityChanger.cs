@@ -18,7 +18,7 @@ public class OpacityChanger : MonoBehaviour
             {
                 if (opacity!=1)
                 {
-                    Debug.Log(opacity);
+                    //Debug.Log(opacity);
                 }
                 r.enabled = true;
                 foreach (Material mat in r.materials)

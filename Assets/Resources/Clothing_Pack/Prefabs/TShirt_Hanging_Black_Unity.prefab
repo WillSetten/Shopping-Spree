@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 470614}
   - component: {fileID: 3370614}
   - component: {fileID: 2370614}
+  - component: {fileID: 3817390125670523605}
   m_Layer: 0
   m_Name: TShirt
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3817390125670523605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 45.0655, y: 83.219666, z: 6.4289856}
+  m_Center: {x: -117.50017, y: 244.83849, z: -703.9657}
 --- !u!1 &170616
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +262,7 @@ GameObject:
   - component: {fileID: 470620}
   - component: {fileID: 9570614}
   - component: {fileID: 7286144817994785081}
+  - component: {fileID: -1527558947821647180}
   m_Layer: 0
   m_Name: TShirt_Hanging_Black_Unity
   m_TagString: Untagged
@@ -262,7 +277,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170620}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children:
@@ -272,7 +287,7 @@ Transform:
   - {fileID: 270767331262390880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &9570614
 Animator:
   serializedVersion: 3
@@ -308,6 +323,21 @@ MonoBehaviour:
   - {fileID: 2370616}
   - {fileID: 2370618}
   - {fileID: 2370614}
+--- !u!114 &-1527558947821647180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf3907a4a6393b4c95364d6a8671f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDestination: {fileID: 0}
+  previousParent: {fileID: 0}
+  holdingObject: 0
 --- !u!1001 &8506620325110146021
 PrefabInstance:
   m_ObjectHideFlags: 0

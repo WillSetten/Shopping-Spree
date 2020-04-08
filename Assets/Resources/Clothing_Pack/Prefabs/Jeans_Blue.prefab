@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2392728}
   - component: {fileID: 9592728}
   - component: {fileID: 4355340842383756317}
+  - component: {fileID: -2749204353438709623}
+  - component: {fileID: 2097682455532350447}
   m_Layer: 0
   m_Name: Jeans_Blue
   m_TagString: Untagged
@@ -27,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192728}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 1.2, z: -0}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.3}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children:
   - {fileID: 3963221786590320457}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: -180}
 --- !u!33 &3392728
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -115,6 +117,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshes:
   - {fileID: 2392728}
+--- !u!114 &-2749204353438709623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf3907a4a6393b4c95364d6a8671f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDestination: {fileID: 0}
+  previousParent: {fileID: 0}
+  holdingObject: 0
+--- !u!65 &2097682455532350447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 26.287577, y: 7.825927, z: 64.793495}
+  m_Center: {x: 12.00338, y: 0.083567426, z: -34.101772}
 --- !u!1001 &4813312665871718092
 PrefabInstance:
   m_ObjectHideFlags: 0

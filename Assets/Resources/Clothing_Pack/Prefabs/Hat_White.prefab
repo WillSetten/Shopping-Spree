@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2376700}
   - component: {fileID: 9576700}
   - component: {fileID: -8804966158759330205}
+  - component: {fileID: 2510671193960027157}
+  - component: {fileID: -1053084258741204491}
   m_Layer: 0
   m_Name: Hat_White
   m_TagString: Untagged
@@ -115,6 +117,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshes:
   - {fileID: 2376700}
+--- !u!114 &2510671193960027157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf3907a4a6393b4c95364d6a8671f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDestination: {fileID: 0}
+  previousParent: {fileID: 0}
+--- !u!65 &-1053084258741204491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.78456, y: 14.584045, z: 35.463028}
+  m_Center: {x: 0.5448643, y: -7.2920036, z: 5.351729}
 --- !u!1001 &7922431735975491365
 PrefabInstance:
   m_ObjectHideFlags: 0

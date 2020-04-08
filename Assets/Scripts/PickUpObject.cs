@@ -6,11 +6,16 @@ public class PickUpObject : MonoBehaviour
 {
     public Transform myDestination;
     public Transform previousParent;
-    bool holdingObject;
+    public bool holdingObject;
+    Vector3 oldLocalPosition;
+    Quaternion oldRotation;
+    bool displayActive;
 
-    private void Start()
+    private void Awake()
     {
         holdingObject = false;
+        displayActive = false;
+        myDestination = GameObject.Find("GrabDestination").GetComponent<Transform>();
     }
 
     private void Update()
@@ -19,31 +24,66 @@ public class PickUpObject : MonoBehaviour
         {
             this.transform.position = myDestination.position;
         }
+    }
+    private void OnMouseOver()
+    {
         if (Input.GetMouseButtonDown(1))
         {
-            GetComponentInChildren<Canvas>().gameObject.SetActive(true);
+            if (!displayActive)
+            {
+                transform.Find("Item Details").gameObject.SetActive(true);
+                displayActive = true;
+            }
+            else
+            {
+                transform.Find("Item Details").gameObject.SetActive(false);
+                displayActive = false;
+            }
         }
     }
 
-    void OnMouseDown()
+    public void toggleDisplay()
     {
-        GetComponent<BoxCollider>().enabled = false;
-        GetComponent<Rigidbody>().useGravity = false;
-        if (transform.parent!=null)
+        if (!displayActive)
+        {
+            transform.Find("Item Details").gameObject.SetActive(true);
+            displayActive = true;
+        }
+        else
+        {
+            transform.Find("Item Details").gameObject.SetActive(false);
+            displayActive = false;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (GetComponent<Rigidbody>()) {
+            GetComponent<Rigidbody>().useGravity = false;
+        }
+        oldLocalPosition = transform.localPosition;
+        if (transform.parent != null)
         {
             previousParent = transform.parent;
         }
+        oldRotation = this.transform.localRotation;
         this.transform.position = myDestination.position;
         this.transform.parent = myDestination.transform;
         holdingObject = true;
+        if (!displayActive)
+        {
+            toggleDisplay();
+        }
     }
-
     private void OnMouseUp()
     {
         this.transform.parent = previousParent;
-        GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<BoxCollider>().enabled = true;
+        this.transform.localRotation = oldRotation;
+        transform.localPosition = oldLocalPosition;
+        if (GetComponent<Rigidbody>())
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+        } 
         holdingObject = false;
-
     }
 }
