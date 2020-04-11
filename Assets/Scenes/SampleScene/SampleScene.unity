@@ -462,6 +462,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4586504274250227641, guid: a43ee4ff04040c2438cdfb69358561eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414762485326279774, guid: a43ee4ff04040c2438cdfb69358561eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8480015611977278496, guid: a43ee4ff04040c2438cdfb69358561eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1558,6 +1568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myDestination: {fileID: 832109349}
   previousParent: {fileID: 0}
+  holdingObject: 0
 --- !u!1 &1208244236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myDestination: {fileID: 832109349}
   previousParent: {fileID: 0}
+  holdingObject: 0
 --- !u!114 &1369731213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2394,6 +2406,7 @@ GameObject:
   - component: {fileID: 1654100913}
   - component: {fileID: 1654100912}
   - component: {fileID: 1654100911}
+  - component: {fileID: 1654100914}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2449,6 +2462,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1654100914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654100910}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9375ad6668ac3cb4e8e13ec0658d98e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1657590009
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,6 +3472,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4586504274250227641, guid: a43ee4ff04040c2438cdfb69358561eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361150019913748898, guid: a43ee4ff04040c2438cdfb69358561eb,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414762485326279774, guid: a43ee4ff04040c2438cdfb69358561eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8480015611977278496, guid: a43ee4ff04040c2438cdfb69358561eb,
         type: 3}
       propertyPath: m_LocalPosition.x
