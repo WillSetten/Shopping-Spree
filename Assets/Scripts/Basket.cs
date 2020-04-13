@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnMouseDown()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnMouseUp()
     {
         
     }

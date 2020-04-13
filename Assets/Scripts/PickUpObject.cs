@@ -85,7 +85,7 @@ public class PickUpObject : MonoBehaviour
             {
                 continue;
             }
-            if (c.gameObject.transform.parent.name == "Basket Frame")
+            if (c.gameObject.transform.parent.name == "Basket Frame" && !gameObject.name.Equals("Basket"))
             {
                 nearBasket = true;
                 break;
