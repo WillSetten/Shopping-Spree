@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right*x + transform.forward*z;
-
         body.velocity = move*speed*Time.deltaTime;
     }
 }

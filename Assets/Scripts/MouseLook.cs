@@ -39,13 +39,13 @@ public class MouseLook : MonoBehaviour
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
         layerMask = ~layerMask;
 
-        Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
+        //Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
         
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width/2, Screen.height/2));
         if(Physics.Raycast(ray, out hit)) {
             if(hit.collider != null) {
-                Debug.Log(hit.collider.gameObject.name);
+                //Debug.Log(hit.collider.gameObject.name);
             }
         }
     }

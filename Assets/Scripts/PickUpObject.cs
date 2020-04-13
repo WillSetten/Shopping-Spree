@@ -77,13 +77,41 @@ public class PickUpObject : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        bool nearBasket = false;
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1);
+        foreach (Collider c in hitColliders)
+        {
+            if (c.gameObject.transform.parent==null)
+            {
+                continue;
+            }
+            if (c.gameObject.transform.parent.name == "Basket Frame")
+            {
+                nearBasket = true;
+                break;
+            }
+        }
+        //If the user has let go of the item near the basket, add it to the basket
+        if (holdingObject && nearBasket)
+        {
+            Debug.Log("Item in basket!");
+            restoreObjectLocation();
+        }
+        //If the user has just let go of the item
+        else if (holdingObject) {
+            restoreObjectLocation();
+        }
+    }
+
+    private void restoreObjectLocation()
+    {
         this.transform.parent = previousParent;
         this.transform.localRotation = oldRotation;
         transform.localPosition = oldLocalPosition;
         if (GetComponent<Rigidbody>())
         {
             GetComponent<Rigidbody>().useGravity = true;
-        } 
+        }
         holdingObject = false;
     }
 }
