@@ -355,9 +355,10 @@ MonoBehaviour:
   day: 16
   month: 1
   year: 2019
-  colour: 
-  size: []
-  price: 0
+  colour: Pink
+  size:
+  - Large
+  price: 99.99
 --- !u!1001 &1318536370130101182
 PrefabInstance:
   m_ObjectHideFlags: 0
