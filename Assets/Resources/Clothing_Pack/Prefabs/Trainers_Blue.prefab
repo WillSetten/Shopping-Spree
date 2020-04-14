@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8591948935746050461}
   - component: {fileID: -5243013652540641353}
   - component: {fileID: 6760726664923760521}
+  - component: {fileID: 2564414374518966056}
   m_Layer: 0
   m_Name: Trainers_Blue
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 465000}
   - {fileID: 464998}
-  - {fileID: 2934076224195276115}
+  - {fileID: 8568803797150816560}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -99,6 +100,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 37.516712, y: 15.75973, z: 36.31042}
   m_Center: {x: -0.16746044, y: 7.3798656, z: 4.5994864}
+--- !u!114 &2564414374518966056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f703258b1502c44781b14d8c009b5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Shoes
+  day: 8
+  month: 8
+  year: 2015
+  colour: Blue
+  size:
+  - Medium
+  price: 99.99
 --- !u!1 &164998
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +278,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &6736133447585508566
+--- !u!1001 &227118209760975029
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -268,21 +289,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item Details
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992783621251937703, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: Trainers
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138708477452219252, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: 50.00
-      objectReference: {fileID: 0}
-    - target: {fileID: 7848581436938916401, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -347,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 28
+      value: 33.1
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -357,7 +363,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 520.224
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -389,26 +395,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.049999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.049999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.099999994
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eed9aadd83347459add6087901996c, type: 3}
---- !u!224 &2934076224195276115 stripped
+--- !u!224 &8568803797150816560 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
     type: 3}
-  m_PrefabInstance: {fileID: 6736133447585508566}
+  m_PrefabInstance: {fileID: 227118209760975029}
   m_PrefabAsset: {fileID: 0}

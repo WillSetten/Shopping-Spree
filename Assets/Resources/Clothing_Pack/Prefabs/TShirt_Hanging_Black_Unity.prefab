@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 470614}
   - component: {fileID: 3370614}
   - component: {fileID: 2370614}
-  - component: {fileID: 3817390125670523605}
   m_Layer: 0
   m_Name: TShirt
   m_TagString: Untagged
@@ -53,7 +52,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 0
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3817390125670523605
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170614}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 45.0655, y: 83.219666, z: 6.4289856}
-  m_Center: {x: -117.50017, y: 244.83849, z: -703.9657}
 --- !u!1 &170616
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +249,8 @@ GameObject:
   - component: {fileID: 9570614}
   - component: {fileID: 7286144817994785081}
   - component: {fileID: -1527558947821647180}
+  - component: {fileID: 6880407906764922353}
+  - component: {fileID: 3535688366002751148}
   m_Layer: 0
   m_Name: TShirt_Hanging_Black_Unity
   m_TagString: Untagged
@@ -284,7 +272,7 @@ Transform:
   - {fileID: 470616}
   - {fileID: 470618}
   - {fileID: 470614}
-  - {fileID: 270767331262390880}
+  - {fileID: 9200500673837829415}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -338,42 +326,51 @@ MonoBehaviour:
   myDestination: {fileID: 0}
   previousParent: {fileID: 0}
   holdingObject: 0
---- !u!1001 &8506620325110146021
+--- !u!114 &6880407906764922353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f703258b1502c44781b14d8c009b5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: T-Shirt
+  day: 16
+  month: 1
+  year: 2019
+  colour: Black
+  size:
+  - Small
+  - Large
+  price: 23.98
+--- !u!65 &3535688366002751148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 81.5, y: 92.6, z: 8.28}
+  m_Center: {x: 0, y: -42.3, z: 0}
+--- !u!1001 &748404529384033442
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 470620}
     m_Modifications:
-    - target: {fileID: 2696930387668027857, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: Black
-      objectReference: {fileID: 0}
     - target: {fileID: 3913540472031821493, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_Name
       value: Item Details
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992783621251937703, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: T-Shirt
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138708477452219252, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: 15.00
-      objectReference: {fileID: 0}
-    - target: {fileID: 7848581436938916401, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: Medium
-      objectReference: {fileID: 0}
-    - target: {fileID: 7848581436938916401, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -388,7 +385,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -403,12 +400,12 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000001872535
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -423,7 +420,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.00002
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -433,12 +430,12 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.3
+      value: 18.4
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -448,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 520.224
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -480,26 +477,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.050000023
-      objectReference: {fileID: 0}
-    - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.049999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.100000046
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eed9aadd83347459add6087901996c, type: 3}
---- !u!224 &270767331262390880 stripped
+--- !u!224 &9200500673837829415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
     type: 3}
-  m_PrefabInstance: {fileID: 8506620325110146021}
+  m_PrefabInstance: {fileID: 748404529384033442}
   m_PrefabAsset: {fileID: 0}

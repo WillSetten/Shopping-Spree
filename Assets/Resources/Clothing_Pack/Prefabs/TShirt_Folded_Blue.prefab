@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 437234375932207512}
   - component: {fileID: 5197639700096516749}
   - component: {fileID: 6235015045391833520}
+  - component: {fileID: 3485142194092630997}
   m_Layer: 0
   m_Name: TShirt_Folded_Blue
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.6, z: 0.55}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children:
-  - {fileID: 1586801731922321345}
+  - {fileID: 7113488917122207170}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
@@ -145,42 +146,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 45.84935, y: 5.601928, z: 50.420605}
   m_Center: {x: -21.816689, y: 1.715793, z: -23.908339}
---- !u!1001 &7190296615319920196
+--- !u!114 &3485142194092630997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f703258b1502c44781b14d8c009b5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: T-Shirt
+  day: 22
+  month: 2
+  year: 2017
+  colour: Blue
+  size:
+  - Small
+  - Medium
+  price: 14.99
+--- !u!1001 &1690067099820313671
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 449940}
     m_Modifications:
-    - target: {fileID: 2696930387668027857, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: Blue
-      objectReference: {fileID: 0}
     - target: {fileID: 3913540472031821493, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_Name
       value: Item Details
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992783621251937703, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: T-Shirt
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138708477452219252, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: 15.00
-      objectReference: {fileID: 0}
-    - target: {fileID: 7848581436938916401, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: Medium
-      objectReference: {fileID: 0}
-    - target: {fileID: 7848581436938916401, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -195,7 +192,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -59
+      value: -64.6
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -240,12 +237,12 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -23.4
+      value: -22.3
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -255,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 520.224
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -289,9 +286,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eed9aadd83347459add6087901996c, type: 3}
---- !u!224 &1586801731922321345 stripped
+--- !u!224 &7113488917122207170 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
     type: 3}
-  m_PrefabInstance: {fileID: 7190296615319920196}
+  m_PrefabInstance: {fileID: 1690067099820313671}
   m_PrefabAsset: {fileID: 0}

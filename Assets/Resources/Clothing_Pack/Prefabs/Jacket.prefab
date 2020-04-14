@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6511804594084172782}
   - component: {fileID: -476741955221558390}
   - component: {fileID: 73832050667517170}
+  - component: {fileID: 3113264727195662802}
   m_Layer: 0
   m_Name: Jacket
   m_TagString: Untagged
@@ -113,7 +114,7 @@ Transform:
   - {fileID: 478202}
   - {fileID: 478206}
   - {fileID: 478208}
-  - {fileID: 2280678326404676245}
+  - {fileID: 6138470763718332447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -180,6 +181,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 73.04724, y: 90.07582, z: 23.237926}
   m_Center: {x: -0.054567218, y: -45.03791, z: 7.3364086}
+--- !u!114 &3113264727195662802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f703258b1502c44781b14d8c009b5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Jacket
+  day: 4
+  month: 12
+  year: 2001
+  colour: Black
+  size:
+  - Small
+  price: 149.99
 --- !u!1 &178206
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +359,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &7668218062535555856
+--- !u!1001 &2376873433610801562
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -349,16 +370,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item Details
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992783621251937703, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: Jacket
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138708477452219252, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: 150.00
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -418,12 +429,12 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.9
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -433,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 520.224
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -467,9 +478,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eed9aadd83347459add6087901996c, type: 3}
---- !u!224 &2280678326404676245 stripped
+--- !u!224 &6138470763718332447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
     type: 3}
-  m_PrefabInstance: {fileID: 7668218062535555856}
+  m_PrefabInstance: {fileID: 2376873433610801562}
   m_PrefabAsset: {fileID: 0}

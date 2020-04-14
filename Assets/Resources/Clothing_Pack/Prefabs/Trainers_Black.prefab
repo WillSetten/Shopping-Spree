@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -269740708877584660}
   - component: {fileID: 3203748965183458891}
   - component: {fileID: 6665279778045533987}
+  - component: {fileID: 6649398593444999537}
   m_Layer: 0
   m_Name: Trainers_Black
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 420070}
   - {fileID: 420072}
-  - {fileID: 3639219799270129109}
+  - {fileID: 5439188175981376809}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -99,6 +100,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 37.516712, y: 15.75973, z: 36.31042}
   m_Center: {x: -0.16746044, y: 7.3798656, z: 4.5994864}
+--- !u!114 &6649398593444999537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f703258b1502c44781b14d8c009b5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Shoes
+  day: 8
+  month: 8
+  year: 2015
+  colour: Black
+  size:
+  - Medium
+  - Large
+  price: 49.98
 --- !u!1 &120070
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +279,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &5137895008500874320
+--- !u!1001 &4519225587826291884
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -268,21 +290,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item Details
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992783621251937703, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: Trainers
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138708477452219252, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: 50.00
-      objectReference: {fileID: 0}
-    - target: {fileID: 7848581436938916401, guid: 18eed9aadd83347459add6087901996c,
-        type: 3}
-      propertyPath: m_Text
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -347,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 28
+      value: 33.1
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -357,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 520.224
       objectReference: {fileID: 0}
     - target: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
         type: 3}
@@ -391,9 +398,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eed9aadd83347459add6087901996c, type: 3}
---- !u!224 &3639219799270129109 stripped
+--- !u!224 &5439188175981376809 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8488268702890983813, guid: 18eed9aadd83347459add6087901996c,
     type: 3}
-  m_PrefabInstance: {fileID: 5137895008500874320}
+  m_PrefabInstance: {fileID: 4519225587826291884}
   m_PrefabAsset: {fileID: 0}

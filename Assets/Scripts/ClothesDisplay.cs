@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClothesDisplay : MonoBehaviour
 {
-    public GameObject[] clothesArray;
+    public GameObject[] basicClothesArray, filteredClothesArray;
     public Transform clothesStorage;
     private MouseLook mouse;
     private bool scrolling;
@@ -12,20 +12,29 @@ public class ClothesDisplay : MonoBehaviour
     public List<Transform> clothesPositions;
     public float clothesLimit;
 
+    public string dateField = "Default";
+    public string priceField = "Default";
+    public string colourField = "Default";
+    public string sizeField = "Default";
+    public string searchField = "";
+
     // Start is called before the first frame update
     void Start()
     {
         mouse = FindObjectOfType<MouseLook>();
         scrolling = false;
 
-        clothesArray = Resources.LoadAll<GameObject>("Clothing_Pack/Prefabs");
+        basicClothesArray = Resources.LoadAll<GameObject>("Clothing_Pack/Prefabs");
         clothesSpacing = 1.8f;
 
+        //Sort the basic array to a default setting that can be filtered later
+        basicClothesArray = SortArrayByDate(basicClothesArray);
+
         int i = 0;
-        while(i < clothesArray.Length){
-          GameObject temp = Instantiate(clothesArray[i], new Vector3( 0, clothesArray[i].transform.position.y, 0), clothesStorage.rotation * clothesArray[i].transform.rotation);
+        while(i < basicClothesArray.Length){
+          GameObject temp = Instantiate(basicClothesArray[i], new Vector3( 0, basicClothesArray[i].transform.position.y, 0), clothesStorage.rotation * basicClothesArray[i].transform.rotation);
           temp.transform.parent = clothesStorage;
-          temp.transform.localPosition = new Vector3(0, clothesArray[i].transform.position.y, ((float)i*clothesSpacing) + clothesArray[i].transform.position.z);
+          temp.transform.localPosition = new Vector3(0, basicClothesArray[i].transform.position.y, -((float)i*clothesSpacing) + basicClothesArray[i].transform.position.z);
           clothesPositions.Add(temp.transform);
           i += 1;
         }
@@ -33,6 +42,54 @@ public class ClothesDisplay : MonoBehaviour
         foreach (Transform t in clothesPositions)
         {
             t.GetComponentInChildren<Canvas>().gameObject.SetActive(false);
+        }
+    }
+
+    private GameObject[] SortArrayByDate(GameObject[] arr) {
+        GameObject[] tempArr = new GameObject[arr.Length];
+        if (dateField == "Default") {
+            dateField = "Newest to Oldest";
+            foreach (GameObject obj in arr) {
+                ClothesDetails objDetails = obj.GetComponent<ClothesDetails>();
+                //find where the obj belongs in the array and insert
+                InsertObjIntoArray(obj, tempArr, FindObjDatePosition(objDetails, tempArr));
+            }            
+        }
+        return tempArr;
+    }
+
+    //find where the clothing belongs in an array based on latest date
+    private int FindObjDatePosition(ClothesDetails objDetails, GameObject[] arr) {
+        for (int i = 0; i < arr.Length; i++) {
+            //if empty space or the given date is earlier than the ith date then return that space position
+            if (arr[i] == null ) {
+                
+                return i;
+            }
+            if (System.DateTime.Compare(objDetails.getDT(), arr[i].GetComponent<ClothesDetails>().getDT()) >= 0)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    //insert obj into the given Object array "arr" in the nth position
+    private void InsertObjIntoArray(GameObject obj, GameObject[] arr, int n) {
+        if (arr[n] == null)
+        {
+            arr[n] = obj;
+        }
+        else
+        {
+            //shift all items n onwards to the right
+            for (int i = arr.Length - 1; i > n; i--)
+            {
+                 arr[i] = arr[i - 1];
+            }
+            //insert the obj
+            arr[n] = obj;
         }
     }
 
