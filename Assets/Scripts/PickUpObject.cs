@@ -10,6 +10,7 @@ public class PickUpObject : MonoBehaviour
     Vector3 oldLocalPosition;
     Quaternion oldRotation;
     bool displayActive;
+    public float zOffset;
 
     private void Awake()
     {
@@ -94,7 +95,8 @@ public class PickUpObject : MonoBehaviour
         //If the user has let go of the item near the basket, add it to the basket
         if (holdingObject && nearBasket)
         {
-            Debug.Log("Item in basket!");
+            //Debug.Log("Item in basket!");
+            GameObject.Find("Basket").GetComponent<Basket>().addItem(this.GetComponent<ClothesDetails>());
             restoreObjectLocation();
         }
         //If the user has just let go of the item

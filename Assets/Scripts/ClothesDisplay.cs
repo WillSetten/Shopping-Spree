@@ -37,7 +37,8 @@ public class ClothesDisplay : MonoBehaviour
         while(i < basicClothesArray.Length){
             GameObject temp = Instantiate(basicClothesArray[i], new Vector3( 0, basicClothesArray[i].transform.position.y, 0), clothesStorage.rotation * basicClothesArray[i].transform.rotation);
             temp.transform.parent = clothesStorage;
-            temp.transform.localPosition = new Vector3(0, basicClothesArray[i].transform.position.y, -((float)i*clothesSpacing) + basicClothesArray[i].transform.position.z);
+            temp.transform.localPosition = new Vector3(0, basicClothesArray[i].transform.position.y, ((float)i*clothesSpacing) +  basicClothesArray[i].transform.position.z);
+            temp.GetComponent<PickUpObject>().zOffset = basicClothesArray[i].transform.position.z;
             clothesList.Add(temp);
             clothesPositions.Add(temp.transform);
             i += 1;
@@ -54,16 +55,15 @@ public class ClothesDisplay : MonoBehaviour
     public void UpdateRack()
     {
         //this block is essentially copied from your code above
-        int i = 0;
+        int i = 1;
         foreach (GameObject GO in clothesList)
         {
             //displayList is the filtered list and clothes list is the sorted list, so only show clothes that are in both lists
             if (displayList.IndexOf(GO) != -1)
             {
-                //from line 38
-                GO.transform.position = new Vector3(0, basicClothesArray[i].transform.position.y, 0);
                 //from line 40
-                GO.transform.localPosition = new Vector3(0, GO.transform.position.y, -((float)i * clothesSpacing) + GO.transform.position.z);
+                GO.transform.localPosition = new Vector3(0, GO.transform.localPosition.y, ((float)i * clothesSpacing) + GO.GetComponent<PickUpObject>().zOffset);
+                //Debug.Log(basicClothesArray[i].name + "," + GO.name);
                 i += 1;
             }
             else
@@ -302,7 +302,7 @@ public class ClothesDisplay : MonoBehaviour
                     //Debug.Log("Teleporting " + t.gameObject.name + " to the right side of the rack");
                     t.localPosition = new Vector3(0, t.localPosition.y, t.localPosition.z-clothesLimit);
                 }
-                t.localPosition = new Vector3(t.localPosition.x, t.localPosition.y, t.localPosition.z - Input.GetAxis("Mouse X") * mouse.mouseSensitivity / 5 * Time.deltaTime);
+                t.localPosition = new Vector3(t.localPosition.x, t.localPosition.y, t.localPosition.z + Input.GetAxis("Mouse X") * mouse.mouseSensitivity / 5 * Time.deltaTime);
             }
         }
     }

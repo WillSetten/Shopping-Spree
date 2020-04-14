@@ -13,6 +13,8 @@ public class OpacityChanger : MonoBehaviour
             if (opacity == 0)
             {
                 r.enabled = false;
+                GetComponent<BoxCollider>().enabled = false;
+                transform.Find("Item Details").gameObject.SetActive(false);
             }
             else
             {
@@ -21,6 +23,7 @@ public class OpacityChanger : MonoBehaviour
                     //Debug.Log(opacity);
                 }
                 r.enabled = true;
+                GetComponent<BoxCollider>().enabled = true;
                 foreach (Material mat in r.materials)
                 {
                     Color color = mat.color;
