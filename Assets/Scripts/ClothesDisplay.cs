@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ClothesDisplay : MonoBehaviour
 {
-    public GameObject[] basicClothesArray, filteredClothesArray;
+    public GameObject[] basicClothesArray;
     public Transform clothesStorage;
     private MouseLook mouse;
     private bool scrolling;
@@ -59,7 +59,6 @@ public class ClothesDisplay : MonoBehaviour
             //displayList is the filtered list and clothes list is the sorted list, so only show clothes that are in both lists
             if (displayList.Contains(GO))
             {
-                //from line 40
                 GO.SetActive(true);
                 GO.transform.localPosition = new Vector3(0, GO.transform.localPosition.y, ((float)i * clothesSpacing) + GO.GetComponent<PickUpObject>().zOffset);
                 i += 1;
@@ -181,58 +180,39 @@ public class ClothesDisplay : MonoBehaviour
         return -1;
     }
 
-    private void SortArrayByPrice(string str)
-    {
-        if (sortField != str)
-        {
-            sortField = str;
-            ClothesDetails details;
-            foreach (GameObject GO in clothesList)
+    private void SortArrayByPrice(string str) {
+        tempList = new List<GameObject>();
+        ClothesDetails cd;
+        foreach (GameObject GO in clothesList) {
+            cd = GO.GetComponent<ClothesDetails>();
+            int result = FindIndex(cd, str);
+            if (tempList.Count <= 0 || result == -1)
             {
-                details = GO.GetComponent<ClothesDetails>();
-                if (tempList.Count == 0)
-                {
-                    tempList.Add(GO);
-                }
-                else if (FindObjPricePosition(details, str) == -1)
-                {
-                    tempList.Add(GO);
-                }
-                else
-                {
-                    int i = FindObjDatePosition(details, str);
-                    tempList.Insert(i, GO);
-                }
+                tempList.Add(GO);
             }
-            clothesList = new List<GameObject>(tempList);
+            else if (result >= 0)
+            {
+                tempList.Insert(result, GO);
+            }
+            else if (result == -2) {
+                print("THERE WAS A PROBLEM");
+            }
         }
+        clothesList = tempList;
     }
 
-    //find where the clothing belongs in an array based on price
-    private int FindObjPricePosition(ClothesDetails objDetails, string str)
-    {
-        for (int i = 0; i < clothesList.Count; i++)
-        {
-            if (str == "Price - Highest to Lowest")
-            {
-                if (tempList.Count == i)
-                {
-                    return -1;
+    private int FindIndex(ClothesDetails cd, string str) {
+        ClothesDetails term2;
+        foreach (GameObject GO in tempList) {
+            term2 = GO.GetComponent<ClothesDetails>();
+            if (str == "Price - Highest to Lowest") {
+                if (cd.getPrice() >= term2.getPrice()) {
+                    return tempList.IndexOf(GO);
                 }
-                if (objDetails.getPrice() >= tempList[i].GetComponent<ClothesDetails>().getPrice())
+            } else if (str == "Price - Lowest to Highest") {
+                if (cd.getPrice() <= term2.getPrice())
                 {
-                    return i;
-                }
-            }
-            if (str == "Price - Lowest to Highest")
-            {
-                if (tempList.Count == i)
-                {
-                    return -1;
-                }
-                if (objDetails.getPrice() <= tempList[i].GetComponent<ClothesDetails>().getPrice())
-                {
-                    return i;
+                    return tempList.IndexOf(GO);
                 }
             }
         }
