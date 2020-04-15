@@ -65,4 +65,9 @@ public class Basket : MonoBehaviour
         }
         totalCost.text = "£"+cost.ToString();
     }
+
+    public void exit()
+    {
+        Application.Quit();
+    }
 }
