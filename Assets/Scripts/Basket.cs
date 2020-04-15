@@ -9,6 +9,9 @@ public class Basket : MonoBehaviour
     public GameObject basketEntry;
     public Transform entryContainer;
     public Text totalCost;
+    public GameObject basketMenu;
+    public GameObject player;
+
     private void Awake()
     {
         basketEntries = new List<BasketEntry>();
@@ -25,6 +28,8 @@ public class Basket : MonoBehaviour
     private void Update()
     {
         updateTotalCost();
+        basketMenu.transform.LookAt(player.transform);
+        basketMenu.transform.Rotate(new Vector3(0, 180, 0));
     }
 
     public void addItem(ClothesDetails newItem)

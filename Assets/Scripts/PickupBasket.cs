@@ -6,7 +6,6 @@ public class PickupBasket : MonoBehaviour
 {
     public Transform myDestination;
     public Transform previousParent;
-    //public Rigidbody basketRigidBody;
     public bool holdingObject;
 
     Vector3 positionStart, positionDiff;
@@ -31,7 +30,6 @@ public class PickupBasket : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //basketRigidBody.useGravity = false;
         if (transform.parent != null)
         {
             previousParent = transform.parent;
@@ -51,7 +49,6 @@ public class PickupBasket : MonoBehaviour
     private void dropBasket()
     {
         this.transform.parent = previousParent; 
-        //basketRigidBody.useGravity = true;
         holdingObject = false;
         this.transform.position = new Vector3(this.transform.position.x, 2.05f, this.transform.position.z);
     }

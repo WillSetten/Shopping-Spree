@@ -783,10 +783,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f9455629862b347bf8095b42e5bdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basketEntries: []
   basketEntry: {fileID: 8901376432612297597, guid: a4a067098f1f93e4f9908b6db4d3a6e4,
     type: 3}
   entryContainer: {fileID: 7012599567904247199}
   totalCost: {fileID: 5455924573734727717}
+  basketMenu: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2107864797423580372
 GameObject:
   m_ObjectHideFlags: 0
