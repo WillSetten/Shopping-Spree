@@ -70,6 +70,6 @@ public class Basket : MonoBehaviour
         {
             cost = cost + b.getTotalCost();
         }
-        totalCost.text = cost.ToString();
+        totalCost.text = "£"+cost.ToString();
     }
 }

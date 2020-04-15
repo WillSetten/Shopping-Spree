@@ -36,7 +36,7 @@ public class BasketEntry : MonoBehaviour
         }
         ItemQuantity.text = quantityValue.ToString();
         price = details.getPrice();
-        ItemCost.text = (price).ToString();
+        ItemCost.text = "£"+(price).ToString();
     }
     
     public void increaseQuantity()
@@ -60,24 +60,24 @@ public class BasketEntry : MonoBehaviour
     public void updateQuantity()
     {
         ItemQuantity.text = quantityValue.ToString();
-        ItemCost.text = (price * quantityValue).ToString();
+        ItemCost.text = "£" + (price * quantityValue).ToString();
     }
 
     public bool isTheSameAs(ClothesDetails newItem)
     {
         if (!ItemName.text.Equals(newItem.getName()))
         {
-            Debug.Log("new Item" + newItem.name + " has a different name to " + this.name);
+            //Debug.Log("new Item" + newItem.name + " has a different name to " + this.name);
             return false;
         }
         if (price!=newItem.getPrice())
         {
-            Debug.Log("new Item" + newItem.name + " has a different price to " + this.name);
+            //Debug.Log("new Item" + newItem.name + " has a different price to " + this.name);
             return false;
         }
         if (!ItemColour.text.Equals(newItem.getColour()))
         {
-            Debug.Log("new Item" + newItem.name + " has a different colour to " + this.name);
+            //Debug.Log("new Item" + newItem.name + " has a different colour to " + this.name);
             return false;
         }
         string size = "Medium";
@@ -91,10 +91,10 @@ public class BasketEntry : MonoBehaviour
         }
         if (!ItemSize.text.Equals(size))
         {
-            Debug.Log("new Item" + newItem.name + " has a different size to " + this.name);
+            //Debug.Log("new Item" + newItem.name + " has a different size to " + this.name);
             return false;
         }
-        Debug.Log("new Item" + newItem.name + " is identical to " + this.name);
+        //Debug.Log("new Item" + newItem.name + " is identical to " + this.name);
         return true;
     }
 
