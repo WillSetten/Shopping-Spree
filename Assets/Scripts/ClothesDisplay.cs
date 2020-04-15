@@ -30,9 +30,6 @@ public class ClothesDisplay : MonoBehaviour
         basicClothesArray = Resources.LoadAll<GameObject>("Clothing_Pack/Prefabs");
         clothesSpacing = 1.8f;
 
-        //Sort the basic array to a default setting that can be filtered later
-        //filteredClothesArray = SortArrayByDate(basicClothesArray, "Date - Newest to Oldest");
-
         int i = 0;
         while(i < basicClothesArray.Length){
             GameObject temp = Instantiate(basicClothesArray[i], new Vector3( 0, basicClothesArray[i].transform.position.y, 0), clothesStorage.rotation * basicClothesArray[i].transform.rotation);
@@ -56,14 +53,15 @@ public class ClothesDisplay : MonoBehaviour
     {
         //this block is essentially copied from your code above
         int i = 1;
+
         foreach (GameObject GO in clothesList)
         {
             //displayList is the filtered list and clothes list is the sorted list, so only show clothes that are in both lists
-            if (displayList.IndexOf(GO) != -1)
+            if (displayList.Contains(GO))
             {
                 //from line 40
+                GO.SetActive(true);
                 GO.transform.localPosition = new Vector3(0, GO.transform.localPosition.y, ((float)i * clothesSpacing) + GO.GetComponent<PickUpObject>().zOffset);
-                //Debug.Log(basicClothesArray[i].name + "," + GO.name);
                 i += 1;
             }
             else
@@ -83,6 +81,8 @@ public class ClothesDisplay : MonoBehaviour
         colourField = colourDropdown.options[colourDropdown.value].text;
         sizeField = sizeDropdown.options[sizeDropdown.value].text;
 
+        displayList = new List<GameObject>();
+
         ClothesDetails details;
         foreach (GameObject GO in clothesList)
         {
@@ -101,7 +101,6 @@ public class ClothesDisplay : MonoBehaviour
                     displayList.Add(GO);
                 }
             }
-            displayList.Add(GO);
         }
         UpdateRack();
     }
