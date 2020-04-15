@@ -30,6 +30,7 @@ public class Basket : MonoBehaviour
         updateTotalCost();
         basketMenu.transform.LookAt(player.transform);
         basketMenu.transform.Rotate(new Vector3(0, 180, 0));
+        basketMenu.transform.localPosition = new Vector3(0,2.3f,0);
     }
 
     public void addItem(ClothesDetails newItem)
