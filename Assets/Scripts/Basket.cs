@@ -44,7 +44,7 @@ public class Basket : MonoBehaviour
                 return;
             }
         }
-        GameObject newEntry = Instantiate(basketEntry,new Vector3(0,0,0),Quaternion.Euler(0,0,0),entryContainer);
+        GameObject newEntry = Instantiate(basketEntry,new Vector3(0,0,0),basketMenu.transform.rotation,entryContainer);
         Debug.Log(basketEntries.Count);
         newEntry.transform.localPosition = new Vector3(2,75+(-30 * basketEntries.Count), 0);
         newEntry.GetComponent<BasketEntry>().importDetails(newItem);
