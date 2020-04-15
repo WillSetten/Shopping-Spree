@@ -24,6 +24,7 @@ public class PickUpObject : MonoBehaviour
         if (holdingObject)
         {
             this.transform.position = myDestination.position;
+
         }
     }
     private void OnMouseOver()
@@ -43,20 +44,6 @@ public class PickUpObject : MonoBehaviour
         }
     }
 
-    public void toggleDisplay()
-    {
-        if (!displayActive)
-        {
-            transform.Find("Item Details").gameObject.SetActive(true);
-            displayActive = true;
-        }
-        else
-        {
-            transform.Find("Item Details").gameObject.SetActive(false);
-            displayActive = false;
-        }
-    }
-
     private void OnMouseDown()
     {
         if (GetComponent<Rigidbody>()) {
@@ -71,10 +58,8 @@ public class PickUpObject : MonoBehaviour
         this.transform.position = myDestination.position;
         this.transform.parent = myDestination.transform;
         holdingObject = true;
-        if (!displayActive)
-        {
-            toggleDisplay();
-        }
+        transform.Find("Item Details").gameObject.SetActive(true);
+        displayActive = true;
     }
     private void OnMouseUp()
     {
