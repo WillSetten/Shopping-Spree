@@ -30,7 +30,7 @@ public class PickUpObject : MonoBehaviour
         if (holdingObject)
         {
             this.transform.position = myDestination.position;
-            this.transform.LookAt(player.transform.Find("Main Camera").transform);
+            this.transform.LookAt(transform.parent.parent.transform);
 
             //hacky fix for jeans and folded t-shirts
             if (details.itemType == "FoldedTshirt") {
