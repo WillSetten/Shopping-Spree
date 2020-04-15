@@ -16,14 +16,6 @@ public class Basket : MonoBehaviour
     {
         basketEntries = new List<BasketEntry>();
     }
-    private void OnMouseDown()
-    {
-        
-    }
-    private void OnMouseUp()
-    {
-        
-    }
 
     private void Update()
     {

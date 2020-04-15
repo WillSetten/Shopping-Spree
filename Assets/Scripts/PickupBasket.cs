@@ -13,7 +13,6 @@ public class PickupBasket : MonoBehaviour
     private void Awake()
     {
         holdingObject = false;
-        myDestination = GameObject.Find("GrabDestination").GetComponent<Transform>();
     }
 
     private void Update()
