@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClothesDetails : MonoBehaviour
 {
+    //itemType is for a workaround with the bad models only used with jeans and folded t-shirts
+    public string itemType = "";
     public string itemName, day, month, year;
     public string colour;
     public string[] size;

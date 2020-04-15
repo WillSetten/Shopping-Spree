@@ -133,6 +133,7 @@ MonoBehaviour:
   myDestination: {fileID: 0}
   previousParent: {fileID: 0}
   holdingObject: 0
+  zOffset: 0
 --- !u!65 &7220005706885019785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f703258b1502c44781b14d8c009b5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: Jeans
   itemName: Jeans
   day: 2
   month: 3

@@ -11,11 +11,17 @@ public class PickUpObject : MonoBehaviour
     Quaternion oldRotation;
     bool displayActive;
     public float zOffset;
+    public static GameObject player;
+    ClothesDetails details;
 
     private void Awake()
     {
+        if (!player) {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
         holdingObject = false;
         displayActive = false;
+        details = this.GetComponent<ClothesDetails>();
         myDestination = GameObject.Find("GrabDestination").GetComponent<Transform>();
     }
 
@@ -24,7 +30,18 @@ public class PickUpObject : MonoBehaviour
         if (holdingObject)
         {
             this.transform.position = myDestination.position;
+            this.transform.LookAt(player.transform.Find("Main Camera").transform);
 
+            //hacky fix for jeans and folded t-shirts
+            if (details.itemType == "FoldedTshirt") {
+                this.transform.Rotate(90, 0, 0);
+                this.transform.Translate(0.6f, 0, 0.7f);
+            }
+            if (details.itemType == "Jeans")
+            {
+                this.transform.Rotate(-90, 180, 0);
+                this.transform.Translate(-0.25f, 0.35f, 0);
+            }
         }
     }
     private void OnMouseOver()
