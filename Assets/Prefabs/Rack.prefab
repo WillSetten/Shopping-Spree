@@ -401,7 +401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicClothesArray: []
-  filteredClothesArray: []
   clothesStorage: {fileID: 189533288352969840}
   clothesSpacing: 0
   clothesPositions: []
@@ -412,6 +411,7 @@ MonoBehaviour:
   sortDropdown: {fileID: 2213559569068180110}
   sizeDropdown: {fileID: 3528285769353134773}
   colourDropdown: {fileID: 135270187201317802}
+  searchInput: {fileID: 5849787111953630018}
   sortField: Default
   colourField: Default
   sizeField: Default
@@ -534,8 +534,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8747426267105206053}
-        m_MethodName: buttonClick
+      - m_Target: {fileID: 8774031744455013003}
+        m_MethodName: FilterRack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

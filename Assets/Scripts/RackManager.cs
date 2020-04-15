@@ -12,10 +12,11 @@ public class RackManager : MonoBehaviour
     void Update()
     {
         this.transform.position = new Vector3(player.position.x, -2, player.position.z);
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            addRack();
-        }
+        //disabled for now because of text input when searching
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    addRack();
+        //}
     }
 
     //Adds a new rack where the player is facing

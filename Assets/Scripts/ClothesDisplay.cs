@@ -15,6 +15,7 @@ public class ClothesDisplay : MonoBehaviour
     public float clothesLimit;
 
     public Dropdown sortDropdown, sizeDropdown, colourDropdown;
+    public InputField searchInput;
 
     public string sortField = "Default";
     public string colourField = "Default";
@@ -73,6 +74,34 @@ public class ClothesDisplay : MonoBehaviour
         clothesLimit = (float)i * clothesSpacing;
     }
 
+    public void SearchRack() {
+        print("Searching: " + searchInput.text.ToUpper());
+        searchField = searchInput.text.ToUpper();
+        tempList = new List<GameObject>();
+        ClothesDetails details;
+        foreach (GameObject GO in displayList) {
+            details = GO.GetComponent<ClothesDetails>();
+            if (details.getName().ToUpper().Contains(searchField) ||
+                    details.getPrice().ToString().ToUpper().Contains(searchField) ||
+                    details.getColour().ToUpper().Contains(searchField) ||
+                    details.day.ToUpper().Contains(searchField) ||
+                    details.month.ToUpper().Contains(searchField) ||
+                    details.year.ToUpper().Contains(searchField))
+            {
+                tempList.Add(GO);
+            } else {
+                string[] size = details.getSize();
+                for (int i = 0; i < size.Length; i++) {
+                    if (size[i].ToUpper().Contains(searchField) && tempList.Contains(GO) == false) {
+                        tempList.Add(GO);
+                    }
+                }
+            }
+        }
+        displayList = tempList;
+        UpdateRack();
+    }
+
     //This is for filtering the colours and sizes of clothes
     //put into the displayList
     public void FilterRack()
@@ -101,7 +130,13 @@ public class ClothesDisplay : MonoBehaviour
                 }
             }
         }
-        UpdateRack();
+        if (searchInput.text.ToUpper() == "")
+        {
+            UpdateRack();
+        }
+        else {
+            SearchRack();
+        }
     }
 
     //for permuting the clothesList
